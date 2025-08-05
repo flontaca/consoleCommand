@@ -1,0 +1,10 @@
+{
+  "name": "flontaca/console-library",
+  "description": "Console command library",
+  "autoload": {
+    "psr-4": {
+      "Console\\": "src/"
+    }
+  },
+  "require": {}
+}

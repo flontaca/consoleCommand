@@ -1,0 +1,6 @@
+.gitignore
+# Файлы IDE и ОС
+.idea/
+
+# Composer
+/vendor/
