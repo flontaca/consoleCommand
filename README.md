@@ -11,3 +11,6 @@
 Именование файлов:
 
 Файлы должны называться в стиле {Name}Command.php (например GreetCommand.php)
+
+Код вызова демонстрационной команды:
+php app.php command_name {verbose,overwrite} [log_file=app.log] {unlimited} [methods={create,update,delete}] [paginate=50] {log}
