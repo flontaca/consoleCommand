@@ -7,24 +7,27 @@ use Console\Output\OutputInterface;
 
 class DemoCommand extends BaseCommand
 {
-    protected string $name = 'demo';
+    protected string $name = 'command_name';
     protected string $description = 'Демонстрационная команда с примером использования';
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln("Выполнение демонстрационной команды");
+        $output->writeln("\nВызванная команда: ".$input->getCommandName());
 
         $output->writeln("\nАргументы:");
         foreach ($input->getArguments() as $argument) {
-            $output->writeln("  - $argument");
+            $output->writeln("\t- $argument");
         }
 
         $output->writeln("\nПараметры:");
         foreach ($input->getParameters() as $name => $value) {
+            $output->writeln("\t- $name");
             if (is_array($value)) {
-                $output->writeln("  $name: " . implode(', ', $value));
+                foreach ($value as $valueItem){
+                    $output->writeln("\t\t- $valueItem");
+                }
             } else {
-                $output->writeln("  $name: $value");
+                $output->writeln("\t\t- $value");
             }
         }
 

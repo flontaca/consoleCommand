@@ -65,7 +65,7 @@ class CommandRegistry
 
     private function showCommandHelp(CommandInterface $command, OutputInterface $output): void
     {
-        $output->writeln(sprintf("<comment>%s</comment>", $command->getName()));
+        $output->writeln(sprintf("Команда: %s", $command->getName()));
         $output->writeln("");
         $output->writeln($command->getDescription());
         $output->writeln("");
@@ -76,8 +76,7 @@ class CommandRegistry
             $output->writeln("");
         }
 
-        $output->writeln("Аргументы:");
-        $output->writeln("  {help} - Показать эту справку");
+        $output->writeln($command->getHelp());
         // Можно добавить больше информации о специфичных аргументах команды
     }
 }
